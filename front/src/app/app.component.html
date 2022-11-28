@@ -1,0 +1,78 @@
+<div class="main bg-dark w-100 ps-5 pe-5">
+  <div class="container w-75">
+  <img src="" alt="">
+  <h1 class="text-center fSize">C.R.U.D</h1>
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <div class="col-md-auto mb-5 ">
+        <img style="height: 50px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png" alt="">
+      </div>
+      <div class="col-md-auto mb-5">
+        <img style="height: 50px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/1024px-.NET_Core_Logo.svg.png" alt="">
+      </div>
+      <div class="col-md-auto mb-5">
+        <img style="height: 50px;" src="https://cdn-icons-png.flaticon.com/512/5968/5968364.png" alt="">
+      </div>
+      <div class="col-md-auto mb-5">
+        <img style="height: 50px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png" alt="">
+      </div>
+    </div>
+  </div>
+  <form action="submit">
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col row">
+          <label class="me-3" for="textId">ID</label>
+          <input type="text" name="id" id="textId" style="color: #212529;" [(ngModel)]="plato.id" readonly>
+        </div>
+        <div class="col row">
+          <label class="me-3" for="textNombre">Name:</label>
+          <input type="text" name="nombre" id="textNombre" style="color: #212529;" [(ngModel)]="plato.nombre">
+        </div>
+        <div class="col row">
+          <label class="me-3" for="textCategoria">Category:</label>
+          <input type="text" name="cat" id="textCategoria" style="color: #212529;" [(ngModel)]="plato.categoria">
+        </div>
+        
+        <div class="col row">
+          <label class="me-3 align-top" for="textDescripcion">Description:</label>
+          <input type="text" style="height: 100px;" name="desc" id="textDescripcion" style="color: #212529;" [(ngModel)]="plato.descripcion">
+        </div>
+        
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="col text-start">
+      <button class="btn btn-success" type="button" (click)="onAddData(plato)">Add</button>
+      <button class="btn btn-warning m-5" type="button" (click)="onUpdateData(plato)">Update</button>
+      <button class="btn btn-danger" type="button" (click)="onDeleteData(plato)">Delete</button>
+      <button class="btn btn-primary m-5" type="button" (click)="clear()">Clear</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <table id="dtPlatos" class="table table-striped">
+        <thead>
+          <th>Select</th>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Description</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of datatable" >
+            <td><input type="button" value="Select" style="color: #212529;" (click)="onSetData(item)"></td>
+            <td style="color: white;"> {{ item.id_plato }} </td>
+            <td style="color: white;">{{ item.nombre }}</td>
+            <td style="color: white;">{{ item.categoria }}</td>
+            <td style="color: white;">{{ item.descripcion }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

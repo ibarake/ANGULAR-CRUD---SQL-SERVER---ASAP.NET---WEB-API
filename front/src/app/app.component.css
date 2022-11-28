@@ -1,0 +1,13 @@
+*{
+    color: white;
+    font-family: montserrat;
+}
+.fSize{
+    font-size: 100px;
+}
+.main{
+    min-height:100vh;
+}
+app-root, body, html{
+    background-color: #212529;
+}
